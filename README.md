@@ -29,6 +29,9 @@ Web開発のローカル環境でユーザー等を作成する際、実在す�
 - Vercel
 - Render
 
+### アーキテクチャ
+<img width="70%" alt="testusergenerator" src="https://github.com/kevinriverbook/test-user-generator-backend/assets/92033434/2f80adde-c609-4764-825f-6cb8703cf36c">
+
 ## 今後の予定
 - 新機能の追加
 - RSpecを使用したテストの作成
