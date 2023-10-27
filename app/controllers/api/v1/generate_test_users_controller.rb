@@ -2,14 +2,15 @@ class Api::V1::GenerateTestUsersController < ApplicationController
   def generate_test_users
     Faker::Config.locale = 'ja'
 
-    name = Faker::Name.name
+    test_users = []
+    params[:numOfTestUsers].to_i.times do
+      name = Faker::Name.name
+      unformatted_birthday = Faker::Date.birthday(min_age: 18, max_age: 85)
+      birthday = formatDate(unformatted_birthday)
+      age = age(unformatted_birthday)
 
-    unformatted_birthday = Faker::Date.birthday(min_age: 18, max_age: 85)
-    birthday = formatDate(unformatted_birthday)
-
-    age = age(unformatted_birthday)
-
-    test_users = { name: name, birthday: birthday, age: age }
+      test_users.push({ name: name, birthday: birthday, age: age })
+    end
 
     render json: test_users
   end
